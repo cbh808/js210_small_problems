@@ -24,11 +24,13 @@ function productOneToInt(int) {
 
 function getResult(int, operator) {
   if (operator === 's') {
-    return sumOneToInt(int);
+    let sum = sumOneToInt(int);
+    console.log(`The sum of the integers between 1 and ${int} is ${sum}.`);
   } else if (operator === 'p') {
-    return productOneToInt(int);
+    let product = productOneToInt(int);
+    console.log(`The product of the integers between 1 and ${int} is ${product}.`);
   } else {
-    return 'Wrong operator type was input. Please try again.';
+    return 'Wrong operator type was input. Please try again.'
   }
 }
 
