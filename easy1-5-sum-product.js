@@ -28,7 +28,7 @@ function getResult(int, operator) {
   } else if (operator === 'p') {
     return productOneToInt(int);
   } else {
-    return 'Wrong operator type was input. Please try again.'
+    return 'Wrong operator type was input. Please try again.';
   }
 }
 
