@@ -12,7 +12,6 @@ Return finalList
 
 
 */
-
 function buyFruit(groceriesNested) {
   let finalList = [];
 
