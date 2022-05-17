@@ -57,7 +57,7 @@ function findDup(array) {
 
 function findDup(arr) {
   let currentValue;
-  
+
   for (let i = 0; i < arr.length; i += 1) {
     if (currentValue !== arr[i]) {
       currentValue = arr[i];

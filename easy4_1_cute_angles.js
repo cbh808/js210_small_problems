@@ -21,6 +21,9 @@ determine seconds: The remaining decimal * 60 rounded gives seconds
 concatenate with corresponding symbols for deg/min/sec/
 */
 
+const MIN_DEG = 60
+const SEC_MIN = 60
+
 function convert(value) {
   value = String(value);
   if (value.length === 1) {
@@ -32,12 +35,13 @@ function convert(value) {
 function dms(number) {
 
   let degrees = Math.floor(number);
-  let minutes = Math.floor((number - degrees) * 60);
-  let seconds = Math.floor(((number - degrees)*60 - minutes)* 60); 
+  let minutes = Math.floor((number - degrees) * MIN_DEG);
+  // let seconds = Math.floor((((number - degrees) * MIN_DEG) - minutes) * SEC_MIN); 
+  let seconds = Math.floor((((number - degrees) * MIN_DEG) - minutes) * SEC_MIN); 
   degrees = String(degrees);
   minutes = convert(minutes);
   seconds = convert(seconds);
-  return degrees + '°' + minutes + "'" + seconds + '"'
+  return degrees + '°' + minutes + "'" + seconds + '"';
 
 }
 
