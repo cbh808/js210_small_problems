@@ -8,7 +8,7 @@ function getOperator() {
 
 function sumOneToInt(int) {
   let sum = 0;
-  for (num = 1; num <= int; num += 1) {
+  for (let num = 1; num <= int; num += 1) {
     sum += num;
   }
   return sum;
@@ -16,7 +16,7 @@ function sumOneToInt(int) {
 
 function productOneToInt(int) {
   let product = 1;
-  for (num = 1; num <= int; num += 1) {
+  for (let num = 1; num <= int; num += 1) {
     product *= num;
   }
   return product;
@@ -25,12 +25,12 @@ function productOneToInt(int) {
 function getResult(int, operator) {
   if (operator === 's') {
     let sum = sumOneToInt(int);
-    console.log(`The sum of the integers between 1 and ${int} is ${sum}.`);
+    return `The sum of the integers between 1 and ${int} is ${sum}.`;
   } else if (operator === 'p') {
     let product = productOneToInt(int);
-    console.log(`The product of the integers between 1 and ${int} is ${product}.`);
+    return `The product of the integers between 1 and ${int} is ${product}.`;
   } else {
-    return 'Wrong operator type was input. Please try again.'
+    return 'Wrong operator type was input. Please try again.';
   }
 }
 
