@@ -76,7 +76,6 @@ function vignere(str, keyword) {
   str.split('').forEach (char => {
     if (!charIsLetter(char)) {
       encrypted += char;
-
     } else {
       encrypted = encryptChar(char, keyword, keywordIdx, encrypted);
       keywordIdx += 1;
@@ -85,9 +84,14 @@ function vignere(str, keyword) {
   return encrypted;
 }
 
+console.log(vignere('Pineapples don\'t go on pizzas!', 'aA'));
+// Pineapples don't go on pizzas!
 console.log(vignere('Pineapples don\'t go on pizzas!', 'meat'));
 // Bmnxmtpeqw dhz'x gh ar pbldal!
 console.log(vignere('Pineapples don\'t go on pizzas!', 'MeAt'));
 // Bmnxmtpeqw dhz'x gh ar pbldal!
+console.log(vignere('Pineapples don\'t go on pizzas!', 'cab'));
+// Riogaqrlfu dpp't hq oo riabat!
 console.log(vignere('|- - = - -|', 'MeAt'));
 // |- - = - -|
+
