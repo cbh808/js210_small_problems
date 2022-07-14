@@ -1,11 +1,11 @@
 function leadingSubstrings(string) {
-  let substrings = [];
-  for (let len = 1; len <= string.length; len += 1) {
-    substrings.push(string.slice(0, len));
-  }
-
-  return substrings;
+  let result = [];
+  string.split('').forEach((_, idx) => {
+    result.push(string.slice(0, idx + 1));
+  });
+  return result;
 }
+
 
 console.log(leadingSubstrings('abc'));      // ["a", "ab", "abc"]
 console.log(leadingSubstrings('a'));        // ["a"]

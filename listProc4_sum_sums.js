@@ -34,27 +34,37 @@ Algorithm:
   
 */
 
-function getSubArrays(array) {
-  let subArrays = [];
-  array.forEach((_, index) => {
-    subArrays.push(array.slice(0, index + 1));
-  });
+// function getSubArrays(array) {
+//   let subArrays = [];
+//   array.forEach((_, index) => {
+//     subArrays.push(array.slice(0, index + 1));
+//   });
   
-  return subArrays;
-}
+//   return subArrays;
+// }
 
-function addSubArrays(array) {
-  return array.map(subArr => {
-    return subArr.reduce((sum, value) => sum += value);
-  });
-}
+// function addSubArrays(array) {
+//   return array.map(subArr => {
+//     return subArr.reduce((sum, value) => sum += value);
+//   });
+// }
 
-function sumOfSums(array) {
-  let subArrays = getSubArrays(array);
+// function sumOfSums(array) {
+//   let subArrays = getSubArrays(array);
   
-  let addedSubArrays = addSubArrays(subArrays);
+//   let addedSubArrays = addSubArrays(subArrays);
   
-  return addedSubArrays.reduce((sum, value) => sum += value);
+//   return addedSubArrays.reduce((sum, value) => sum += value);
+// }
+
+// Solution 2:
+function sumOfSums(arr) {
+  return arr.reduce((sum, current, idx) => {
+    let slice = arr.slice(0, idx + 1);
+    let sumSlice = slice.reduce((sum, num) => sum += num);
+    return sum += sumSlice
+  });
+
 }
 
 console.log(sumOfSums([3, 5, 2]));        // (3) + (3 + 5) + (3 + 5 + 2) --> 21
