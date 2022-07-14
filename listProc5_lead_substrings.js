@@ -1,8 +1,10 @@
 function leadingSubstrings(string) {
-  let result = [];
-  string.split('').forEach((_, idx) => {
-    result.push(string.slice(0, idx + 1));
-  });
+  let array = string.split('');
+  let result = array.reduce((arr, _, idx) => {
+    arr.push(string.slice(0, idx + 1));
+    return arr;
+  }, []);
+
   return result;
 }
 
